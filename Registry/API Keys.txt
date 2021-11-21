@@ -1,0 +1,3 @@
+reCaptcha-
+	Site key: 6Lc3UeMZAAAAAI7c3RfJyWoeirpQn0_ExW2LA3D1
+	Secret: 6Lc3UeMZAAAAAOeseEZUCqjKn2ri74B6JFx8ZSlM

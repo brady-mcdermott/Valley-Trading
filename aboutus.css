@@ -1,0 +1,443 @@
+html, body {
+    margin: 0;
+    height: 1500px;
+    width: 100%;
+    color: #575757;
+    overflow-x: hidden;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1em 0;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 10000;
+}
+.navbar.scrolled {
+    background-color: white !important;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+    transition: 0.3s;
+}
+
+.navbar img {
+    height: 3em;
+    width: 20em;
+    margin-top: 0.2em;
+    margin-left: 6em;
+}
+
+.navbar ul {
+    width: 100%;
+    display: inline;
+    position: relative;
+    top: -0.8em;
+    right: -20em;
+}
+
+.navbar  ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.navbar ul li {
+    list-style-type: none;
+    display: inline-block;
+    width: 12%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-rendering: geometricPrecision;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    color: black;
+    font-family: 'Staatliches', cursive;
+    font-size: 18px;
+    
+    transition: font-size 0.3s cubic-bezier(0.55, 0,0.55, 0.2), color 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    transform-origin: 50% 30%;
+}
+
+.navbar ul li a:hover {
+    color: #cf7c00;
+    font-size: 2em;
+}
+
+.middle-background {
+    background-image: url("Images/about-us-background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 365px;
+    width: 100%;
+    margin: 0;
+}
+
+#typing-wrapper {
+    position: relative;
+    width: 1000px;
+    height: 1em;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+#middle-welcome {
+    animation: middle-welcome;
+    font-size: 48px;
+}
+
+#middle-next {
+    animation: middle-next;
+    font-size: 48px;
+}
+
+#middle-welcome, #middle-next {
+    font-family: 'Staatliches', cursive;
+    color: white;
+    position: relative;
+
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    letter-spacing: .15em;
+    animation-duration: 15s;
+    animation-timing-function: steps(25, end);
+    animation-iteration-count: infinite;
+}
+
+#middle-welcome::after, #middle-next::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    animation: caret infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(1,end);
+}
+
+@keyframes middle-next {
+    0%, 50%, 100% {
+        width: 0;
+    }
+
+    60%, 90% {
+        width: 13em;
+    }
+}
+
+@keyframes middle-welcome {
+    0%, 50%, 100% {
+        width: 0;
+    }
+    10%, 40% {
+        width: 5.9em;
+    }
+}
+
+@keyframes caret {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.middle-background .background-text-wrapper {
+    float: right;
+    margin-right: 5em;
+    margin-top: 1em;
+    background-color: rgba(204, 102, 0, 0.4);
+    padding: 0 2em;
+    width: 25em;
+}
+
+#about-wrapper {
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+#about {
+    position: relative;
+    margin-top: 3em;
+    align-items: center;
+    text-align: left;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    margin: 0 auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+#about-image {
+    margin-left: 10em;
+    margin-bottom: 3em;
+}
+
+#about-text {
+    float: right;
+    margin-left: 10em;
+    margin-top: -1.8em;
+}
+
+#about-text h3 {
+    font-size: 1.5em;
+    letter-spacing: 0.02em;
+    font-family: 'Staatliches', cursive;
+    color: #cf7c00;
+    font-weight: bold !important;
+}
+
+#about-text p {
+    font-size: 1em;
+    font-family: 'Staatliches', cursive;
+    color: #575757;
+}
+
+#about-wrapper hr {
+    background-color: #d3d3d3;
+    border: none;
+    height: 1px;
+}
+
+
+.description {
+    position: relative;
+    float: middle;
+    margin: 0 auto;
+    height: 22em;
+    width: 80%;
+    border-radius: 10px;
+    background-image: url("Images/community background.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+.description h1 {
+    float: left;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 56px;
+    color: #653601;
+    margin-left: 1em;
+}
+
+.description h4 {
+    position: relative;
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5em;
+    color: #f1f1f1;
+    overflow: wrap;
+    width: 50%;
+    line-height: 2em;
+    top: .5em !important;
+    margin-left: 40%;
+}
+
+.description #white-text {
+    color: #ffdbb3;
+    margin-left: 1em;
+}
+
+.description #trial-button-div {
+    width: 300px; 
+    text-align: center; 
+    float: right;
+    position: absolute;
+    top: 50%; left: 85%;
+    transform: translate(-50%,-50%);
+}
+
+.description #trial-button {
+    font-family: sans-serif; 
+    outline: none;
+    height: 45px; 
+    width: 226px; 
+    border-radius: 6px; 
+    background: white; 
+    color: black; 
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,.13); 
+    font-size: 18px; 
+    font-weight: 700; 
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.description #trial-button:hover {
+    background-color: #d3d3d3;
+    transition: 0.3s;
+}
+
+
+footer {
+    width: 100%;
+    display: inline-block;
+    height: 10%;
+}
+
+footer #footertopwrap {
+    display: inline;
+    height: 10%;
+}
+
+footer #social-wrapper {
+    font-size: 18px;
+    width: 10%;
+    color: #3a3a3a;
+    margin-left: 10%;
+}
+
+footer #social-wrapper #inicon {
+    position: relative;
+    top: 8px;
+}
+footer #social-wrapper #fbicon {
+    position: relative;
+    left: -2px;
+    top: 8px;
+}
+footer #social-wrapper a {
+    text-decoration: none;
+    color: #3a3a3a;
+    font-weight: bolder;
+    margin-left: 0.5em;
+    line-height: 2em;
+}
+footer #social-wrapper a[target="_blank"]::after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+    margin: 0 3px 0 5px;
+}
+
+footer .subscribewrapper {
+    position: relative;
+    float: right;
+    top: -10em;
+    right: 20%;
+}
+
+footer .subscribewrapper form {
+    display: inline-block;
+}
+
+
+footer .subscribewrapper form input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+footer .subscribewrapper form input[type=text]:focus {
+    border: 3px solid #f1f1f1;
+}
+
+footer .subscribewrapper form input[type=submit] {
+    position: relative;
+    left: 100%;
+    top: -3.83em;
+    padding: 12px 20px;
+    
+    background-color: #ff9900;
+}
+
+footer .subscribewrapper hr {
+    position: relative;
+    left: -300%;
+    width: 500%;
+}
